@@ -1,0 +1,18 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    int n;
+        cin >> n;
+
+            double sum = 0.0;
+
+                for (int k = 1; k <= n; k++) {
+                        sum += (1.0 / k) * ((k % 2 == 1) * 2 - 1); // (k % 2 == 1) дает 1 для нечетных и 0 для четных
+                            }
+
+                                cout << fixed << setprecision(6) << sum << endl; // Выводим с точностью 6 знаков после запятой
+                                    return 0;
+                                    }
