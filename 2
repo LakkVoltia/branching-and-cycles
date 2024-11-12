@@ -1,0 +1,35 @@
+#include <iostream>
+#include <algorithm> // для функции sort
+
+using namespace std;
+
+int main() {
+    int a, b, c;
+        
+            // Ввод трёх сторон треугольника
+                cin >> a >> b >> c;
+                    
+                        // Сортируем стороны по возрастанию, чтобы c было самой длинной стороной
+                            int sides[3] = {a, b, c};
+                                sort(sides, sides + 3);
+                                    
+                                        // После сортировки: sides[0] <= sides[1] <= sides[2]
+                                            int x = sides[0];
+                                                int y = sides[1];
+                                                    int z = sides[2];
+                                                        
+                                                            // Проверка существования треугольника
+                                                                if (x + y <= z) {
+                                                                        cout << "UNDEFINED" << endl;
+                                                                            }
+                                                                                // Проверка на прямоугольный треугольник (теорема Пифагора)
+                                                                                    else if (x * x + y * y == z * z) {
+                                                                                            cout << "YES" << endl;
+                                                                                                }
+                                                                                                    // Если треугольник существует, но не прямоугольный
+                                                                                                        else {
+                                                                                                                cout << "NO" << endl;
+                                                                                                                    }
+                                                                                                                        
+                                                                                                                            return 0;
+                                                                                                                            }
