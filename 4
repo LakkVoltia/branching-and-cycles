@@ -1,0 +1,44 @@
+#include <iostream>
+
+using namespace std;
+
+// Функция для определения, является ли год високосным
+bool isLeapYear(int year) {
+return (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0);
+ }
+
+int main() {
+int month, year;
+            
+// Ввод месяца и года
+cin >> month >> year;
+                        
+int days;
+                                
+// Определяем количество дней в месяце
+switch (month) {
+case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+days = 31;
+break;
+case 4: case 6: case 9: case 11:
+days = 30;
+break;
+case 2:
+// Для февраля проверяем високосный ли год
+if (isLeapYear(year)) {
+days = 29;
+} else {
+days = 28;
+}
+break; 
+default:
+// Некорректный номер месяца, хотя такого ввода не должно быть
+days = 0;
+break;
+}
+                                                                                                                                                                                                                                                                
+// Вывод количества дней в заданном месяце
+cout << days << endl;
+                                                                                                                                                                                                                                                                            
+   return 0;
+}
